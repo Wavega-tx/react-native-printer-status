@@ -67,26 +67,26 @@ See examples folder of the source code that you can find a simple example of pri
 ### Constants
 | Name | Description|
 |:-----:|:-----------:|
-| Constants | 打印状态常量 |
-| hasPrinter | boolean,是否有打印机 |
-| printerVersion | 打印机固件版本 |
-| printerSerialNo | 打印机序列号 |
-| printerModal | 打印机型号 |
+| Constants | 
+| hasPrinter |
+| printerVersion |
+| printerSerialNo | 
+| printerModal |
 
 
 ### Printer Status
 
 |  Name | Description |
 |:-----:|:-----------:|
-| OUT_OF_PAPER_ACTION | 缺纸异常 |
-| ERROR_ACTION | 打印错误 |
-| NORMAL_ACTION | 可以打印 |
-| COVER_OPEN_ACTION | 开盖子 |
-| COVER_ERROR_ACTION | 关盖子异常 |
-| KNIFE_ERROR_1_ACTION | 切刀异常1－卡切刀 |
-| KNIFE_ERROR_2_ACTION | 切刀异常2－切刀修复 |
-| OVER_HEATING_ACITON | 打印头过热异常 |
-| FIRMWARE_UPDATING_ACITON | 打印机固件开始升级 |
+| NORMAL_ACTION | 
+| PAPERLESS_ACTION | 
+| PAPEREXISTS_ACTION | 
+| THP_HIGHTEMP_ACTION | 
+| THP_NORMALTEMP_ACTION | 
+| MOTOR_HIGHTEMP_ACTION | 
+| BUSY_ACTION | 
+| CURRENT_TASK_PRINT_COMPLETE_ACTION | 
+
 
 #### Example
 
@@ -99,13 +99,13 @@ class PrinterComponent extends Component {
     componentWillMount() {
         this._printerStatusListener = DeviceEventEmitter.addListener('PrinterStatus', action => {
             switch(action) {
-                case PrinterPackage.Constants.NORMAL_ACTION:   // 可以打印
+                case PrinterPackage.Constants.PAPERLESS_ACTION: 
                     // your code
                     break;
-                case PrinterPackage.Constants.OUT_OF_PAPER_ACTION:  // 缺纸异常
+                case PrinterPackage.Constants.THP_HIGHTEMP_ACTION:  
                     // your code
                     break;
-                case PrinterPackage.Constants.COVER_OPEN_ACTION:   // 开盖子
+                case PrinterPackage.Constants.MOTOR_HIGHTEMP_ACTION:  
                     // your code
                     break;
                 default:
