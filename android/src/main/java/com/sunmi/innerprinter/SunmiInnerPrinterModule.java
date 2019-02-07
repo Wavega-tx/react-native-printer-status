@@ -48,13 +48,13 @@ public class PrinterPackageModule extends ReactContextBaseJavaModule {
 
     
     public final static String NORMAL_ACTION = "com.iposprinter.iposprinterservice.NORMAL_ACTION";
-    public final static String NORMAL_ACTION = "com.iposprinter.iposprinterservice.PAPERLESS_ACTION";
-    public final static String NORMAL_ACTION = "com.iposprinter.iposprinterservice.PAPEREXISTS_ACTION";
-    public final static String NORMAL_ACTION = "com.iposprinter.iposprinterservice.THP_HIGHTEMP_ACTION";
-    public final static String NORMAL_ACTION = "com.iposprinter.iposprinterservice.THP_NORMALTEMP_ACTION";
-    public final static String NORMAL_ACTION = "com.iposprinter.iposprinterservice.MOTOR_HIGHTEMP_ACTION";
-    public final static String NORMAL_ACTION = "com.iposprinter.iposprinterservice.BUSY_ACTION";
-    public final static String NORMAL_ACTION = "com.iposprinter.iposprinterservice.CURRENT_TASK_PRINT_COMPLETE_ACTION";
+    public final static String PAPERLESS_ACTION = "com.iposprinter.iposprinterservice.PAPERLESS_ACTION";
+    public final static String PAPEREXISTS_ACTION = "com.iposprinter.iposprinterservice.PAPEREXISTS_ACTION";
+    public final static String THP_HIGHTEMP_ACTION = "com.iposprinter.iposprinterservice.THP_HIGHTEMP_ACTION";
+    public final static String THP_NORMALTEMP_ACTION = "com.iposprinter.iposprinterservice.THP_NORMALTEMP_ACTION";
+    public final static String MOTOR_HIGHTEMP_ACTION = "com.iposprinter.iposprinterservice.MOTOR_HIGHTEMP_ACTION";
+    public final static String BUSY_ACTION = "com.iposprinter.iposprinterservice.BUSY_ACTION";
+    public final static String CURRENT_TASK_PRINT_COMPLETE_ACTION = "com.iposprinter.iposprinterservice.CURRENT_TASK_PRINT_COMPLETE_ACTION";
 
 
     private ServiceConnection connService = new ServiceConnection() {
