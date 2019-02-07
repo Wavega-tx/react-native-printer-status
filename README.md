@@ -1,31 +1,14 @@
-# react-native-sunmi-inner-printer
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/januslo/react-native-sunmi-inner-printer/master/LICENSE) [![npm version](https://badge.fury.io/js/react-native-sunmi-inner-printer.svg)](https://www.npmjs.com/package/react-native-sunmi-inner-printer)
+# react-native-printer-status
 
-
-http://docs.sunmi.com/htmls/index.html?lang=zh##V1文档资源
-根据商米V1文档开发打印接口
-(React native plugin Referring the sunmi V1 printer document and demos)
-
-**Caution: this is not the official project. I share it because I am working on this device but no any official support in react-native It's welcome to ask any question about the usage,problems or feature required, I will support ASAP.**
-
-Offical Demos plz refer: https://github.com/shangmisunmi/SunmiPrinterDemo
-
-for scanner, refer this: https://github.com/januslo/react-native-sunmi-inner-scanner
 
 ## Installation:
 
 **Step 1.**
 
-install with npm: [Check in NPM](https://www.npmjs.com/package/react-native-sunmi-inner-printer)
-
-```bash
-npm install react-native-sunmi-inner-printer --save
-```
-
-or you may need to install via the clone address directly:
+install with npm:
 
 ```bash 
-npm install https://github.com/januslo/react-native-sunmi-inner-printer.git --save
+npm install https://github.com/cavebring/react-native-printer-status.git --save
 ```
 
 **Step 2:**
@@ -33,35 +16,35 @@ npm install https://github.com/januslo/react-native-sunmi-inner-printer.git --sa
 Links this plugin to your project.
 
 ```bash
-react-native link react-native-sunmi-inner-printer
+react-native link react-native-printer-status
 ```
 
 or you may need to link manually 
 * modify settings.gradle
 
 ```javascript 
-include ':react-native-sunmi-inner-printer'
-project(':react-native-sunmi-inner-printer').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sunmi-inner-printer/android')
+include ':react-native-printer-status'
+project(':react-native-printer-status').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-printer-status/android')
 ```
 
 * modify  app/build.gradle,add dependenceie：
 
 ```javascript
-compile project(':react-native-sunmi-inner-printer')
+compile project(':react-native-printer-status')
 ```
 
 * adds package references to  MainPackage.java 
 
 ```java
 
-import com.sunmi.innerprinter.SunmiInnerPrinterPackage;
+import com.iposprinter.iposprinterservice.PrinterPackage;
 ...
 
  @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new SunmiInnerPrinterPackage()
+            new PrinterPackage()
       );
     }
 
@@ -71,7 +54,7 @@ import com.sunmi.innerprinter.SunmiInnerPrinterPackage;
 
 refer in the javascript:
 ```javascript
-import SunmiInnerPrinter from 'react-native-sunmi-inner-printer';
+import PrinterPackage from 'react-native-printer-status';
 
 ```
 
@@ -110,19 +93,19 @@ See examples folder of the source code that you can find a simple example of pri
 ```javascript
 import React, { Component } from 'react';
 import { View, Text, DeviceEventEmitter } from 'react-native';
-import SunmiInnerPrinter from 'react-native-sunmi-inner-printer';
+import PrinterPackage from 'react-native-printer-status';
 
 class PrinterComponent extends Component {
     componentWillMount() {
         this._printerStatusListener = DeviceEventEmitter.addListener('PrinterStatus', action => {
             switch(action) {
-                case SunmiInnerPrinter.Constants.NORMAL_ACTION:   // 可以打印
+                case PrinterPackage.Constants.NORMAL_ACTION:   // 可以打印
                     // your code
                     break;
-                case SunmiInnerPrinter.Constants.OUT_OF_PAPER_ACTION:  // 缺纸异常
+                case PrinterPackage.Constants.OUT_OF_PAPER_ACTION:  // 缺纸异常
                     // your code
                     break;
-                case SunmiInnerPrinter.Constants.COVER_OPEN_ACTION:   // 开盖子
+                case PrinterPackage.Constants.COVER_OPEN_ACTION:   // 开盖子
                     // your code
                     break;
                 default:
