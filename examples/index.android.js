@@ -15,7 +15,7 @@ import {
 Alert
 } from 'react-native';
 
-import SunmiInnerPrinter from 'react-native-sunmi-inner-printer';
+import PrinterPackage from 'react-native-printer-status';
 
 export default class examples extends Component {
 
@@ -47,41 +47,8 @@ export default class examples extends Component {
        let columnWidth = [25,1,5]
        try {
            //set aligment: 0-left,1-center,2-right
-           await SunmiInnerPrinter.setAlignment(1);
+           await PrinterPackage.setAlignment(1);
 
-           //图片bitmap对象(最大宽度384像素，超过无法打印并且回调callback异常函数)
-           await SunmiInnerPrinter.printBitmap(logobase64, 384/*width*/, 380/*height*/);
-           //SunmiInnerPrinter.commitPrinterBuffer();
-
-           await SunmiInnerPrinter.setFontSize(40);
-           await SunmiInnerPrinter.printOriginalText("Sample Test\n");
-           await SunmiInnerPrinter.setFontSize(50);
-           await SunmiInnerPrinter.printOriginalText("顾客结账\n");
-           await SunmiInnerPrinter.setFontSize(20);
-           await SunmiInnerPrinter.setAlignment(0);
-           await SunmiInnerPrinter.printOriginalText("单号 : 1234567890\n");
-           await SunmiInnerPrinter.printOriginalText("日期 : 2017-6-11 18:43\n");
-           await SunmiInnerPrinter.printOriginalText("台号 : 3\n");
-           await SunmiInnerPrinter.printOriginalText("人数 : 3\n");
-           await SunmiInnerPrinter.printOriginalText("===============================\n");
-           await SunmiInnerPrinter.setFontSize(22);
-            for(var i in orderList){
-                console.log(orderList[i]);
-                console.log(columnWidth);
-                console.log(columnAliment);
-                await SunmiInnerPrinter.printColumnsText(orderList[i],columnWidth,columnAliment);
-            }
-           await SunmiInnerPrinter.setFontSize(20);
-           await SunmiInnerPrinter.printOriginalText("===============================\n");
-           await SunmiInnerPrinter.setAlignment(2);
-           await SunmiInnerPrinter.setFontSize(30);
-           await SunmiInnerPrinter.printOriginalText("净计:$558\n");
-           await SunmiInnerPrinter.printOriginalText("服务费:$56\n");
-           await SunmiInnerPrinter.setFontSize(20);
-           await SunmiInnerPrinter.printOriginalText("===============================\n");
-           await SunmiInnerPrinter.setFontSize(30);
-           await SunmiInnerPrinter.printOriginalText("总计:$614\n");
-           await SunmiInnerPrinter.printOriginalText("\n\n\n\n\n");
        }catch(e){
            console.log(e)
            alert("print error."+e.message);

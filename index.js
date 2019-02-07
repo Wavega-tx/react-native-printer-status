@@ -1,5 +1,5 @@
 import { NativeModules } from 'react-native';
 
-const SunmiInnerPrinter = NativeModules.SunmiInnerPrinter;
+const PrinterPackage = NativeModules.PrinterPackage;
 
-module.exports = SunmiInnerPrinter;
+module.exports = PrinterPackage;

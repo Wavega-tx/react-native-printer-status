@@ -1,4 +1,4 @@
-package com.sunmi.innerprinter;
+package com.iposprinter.iposprinterservice;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SunmiInnerPrinterPackage implements ReactPackage {
+public class PrinterPackage implements ReactPackage {
   @Override
   public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
     return Collections.emptyList();
@@ -20,7 +20,7 @@ public class SunmiInnerPrinterPackage implements ReactPackage {
                               ReactApplicationContext reactContext) {
     List<NativeModule> modules = new ArrayList<>();
 
-    modules.add(new SunmiInnerPrinterModule(reactContext));
+    modules.add(new PrinterPackageModule(reactContext));
 
     return modules;
   }

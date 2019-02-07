@@ -1,5 +1,5 @@
 rootProject.name = 'examples'
-include ':react-native-sunmi-inner-printer'
-project(':react-native-sunmi-inner-printer').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sunmi-inner-printer/android')
+include ':react-native-printer-status'
+project(':react-native-printer-status').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-printer-status/android')
 
 include ':app'

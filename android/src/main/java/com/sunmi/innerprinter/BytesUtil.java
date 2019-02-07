@@ -1,4 +1,4 @@
-package com.sunmi.innerprinter;
+package com.iposprinter.iposprinterservice;
 
 import java.io.ByteArrayOutputStream;
 import java.util.Hashtable;

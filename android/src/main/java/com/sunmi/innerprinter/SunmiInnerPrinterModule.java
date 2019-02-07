@@ -1,4 +1,4 @@
-package com.sunmi.innerprinter;
+package com.iposprinter.iposprinterservice;
 
 import android.content.BroadcastReceiver;
 import com.facebook.react.bridge.NativeModule;
@@ -40,7 +40,7 @@ import android.content.IntentFilter;
 import java.util.Map;
 import java.util.HashMap;
 
-public class SunmiInnerPrinterModule extends ReactContextBaseJavaModule {
+public class PrinterPackageModule extends ReactContextBaseJavaModule {
     public static ReactApplicationContext reactApplicationContext;
     private IWoyouService woyouService;
     private BitmapUtils bitMapUtils;
@@ -79,9 +79,9 @@ public class SunmiInnerPrinterModule extends ReactContextBaseJavaModule {
         }
     };
 
-    private static final String TAG = "SunmiInnerPrinterModule";
+    private static final String TAG = "PrinterPackageModule";
 
-    public SunmiInnerPrinterModule(ReactApplicationContext reactContext) {
+    public PrinterPackageModule(ReactApplicationContext reactContext) {
         super(reactContext);
         reactApplicationContext = reactContext;
        Intent intent = new Intent();
@@ -106,7 +106,7 @@ public class SunmiInnerPrinterModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "SunmiInnerPrinter";
+        return "PrinterPackage";
     }
 
 
@@ -115,15 +115,14 @@ public class SunmiInnerPrinterModule extends ReactContextBaseJavaModule {
         final Map<String, Object> constants = new HashMap<>();
         final Map<String, Object> constantsChildren = new HashMap<>();
 
-        constantsChildren.put("OUT_OF_PAPER_ACTION", OUT_OF_PAPER_ACTION);
-        constantsChildren.put("ERROR_ACTION", ERROR_ACTION);
+        constantsChildren.put("PAPERLESS_ACTION", PAPERLESS_ACTION);
         constantsChildren.put("NORMAL_ACTION", NORMAL_ACTION);
-        constantsChildren.put("COVER_OPEN_ACTION", COVER_OPEN_ACTION);
-        constantsChildren.put("COVER_ERROR_ACTION", COVER_ERROR_ACTION);
-        constantsChildren.put("KNIFE_ERROR_1_ACTION", KNIFE_ERROR_1_ACTION);
-        constantsChildren.put("KNIFE_ERROR_2_ACTION", KNIFE_ERROR_2_ACTION);
-        constantsChildren.put("OVER_HEATING_ACITON", OVER_HEATING_ACITON);
-        constantsChildren.put("FIRMWARE_UPDATING_ACITON", FIRMWARE_UPDATING_ACITON);
+        constantsChildren.put("PAPEREXISTS_ACTION", PAPEREXISTS_ACTION);
+        constantsChildren.put("THP_HIGHTEMP_ACTION", THP_HIGHTEMP_ACTION);
+        constantsChildren.put("THP_NORMALTEMP_ACTION", THP_NORMALTEMP_ACTION);
+        constantsChildren.put("MOTOR_HIGHTEMP_ACTION", MOTOR_HIGHTEMP_ACTION);
+        constantsChildren.put("BUSY_ACTION", BUSY_ACTION);
+        constantsChildren.put("CURRENT_TASK_PRINT_COMPLETE_ACTION", CURRENT_TASK_PRINT_COMPLETE_ACTION);
 
         constants.put("Constants", constantsChildren);
 

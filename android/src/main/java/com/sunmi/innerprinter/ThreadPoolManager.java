@@ -1,4 +1,4 @@
-package com.sunmi.innerprinter;
+package com.iposprinter.iposprinterservice;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

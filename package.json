@@ -1,15 +1,15 @@
 {
-  "name": "react-native-sunmi-inner-printer",
+  "name": "react-native-printer-status",
   "version": "0.1.6",
-  "description": "http://docs.sunmi.com/htmls/index.html?lang=zh##V1文档资源 根据商米V1文档开发的蓝牙打印for React Native.",
-  "author": "Janus J K Lu <januslo6211@gmail.com>",
+  "description": "http://doc.com",
+  "author": "John Cavebring",
   "contributors": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/januslo/react-native-sunmi-inner-printer"
+    "url": "https://github.com/cavebring/react-native-printer-status"
   },
   "bugs": {
-    "url": "https://github.com/januslo/react-native-sunmi-inner-printer/issues"
+    "url": "https://github.com/cavebring/react-native-printer-status/issues"
   },
   "main": "index.js",
   "scripts": {
@@ -17,10 +17,10 @@
   },
   "keywords": [
     "react-native",
-    "sunmi",
+    "esc-pos",
     "printer",
-    "商米",
-    "打印"
+    "esc",
+    "pos"
   ],
   "license": "MIT",
   "private": false,
